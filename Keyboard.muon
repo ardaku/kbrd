@@ -138,6 +138,8 @@
         cap_alt: 
         cap_opt: 
         cap_alt_opt: 
+    14: (())
+    15: (DIVIDE)
 1:
     0: (INDENT)
         cap: (OUTDENT)
@@ -265,6 +267,8 @@
         cap_alt: (LOWER_CASE)
         cap_opt: (UPPER_CASE)
         cap_alt_opt: (TITLE_CASE)
+    14: (())
+    15: (MULTIPLY)
 2:
     0: (CONTROL)
         cap: (FIND_MOUSE/SYS)
@@ -383,6 +387,9 @@
         cap_alt: 
         cap_opt: 
         cap_alt_opt: 
+    13: (())
+    14: (())
+    15: (SUBTRACT)
 3:
     0: (SHIFT)
         cap:
@@ -393,7 +400,8 @@
         cap_alt: 
         cap_opt: 
         cap_alt_opt: 
-    1: z
+    1: (())
+    2: z
         cap: Z
         alt: (REDO)
         opt: æ
@@ -402,7 +410,7 @@
         cap_alt: (UNDO_REDO_HISTORY_BRANCH)
         cap_opt: Æ
         cap_alt_opt: Ž
-    2: x
+    3: x
         cap: X
         alt: (CLIPBOARD_SWAP)
         opt: 
@@ -411,7 +419,7 @@
         cap_alt: 
         cap_opt: 
         cap_alt_opt: 
-    3: c
+    4: c
         cap: C
         alt: (CANCEL)
         opt: 
@@ -420,7 +428,7 @@
         cap_alt: 
         cap_opt: 
         cap_alt_opt: 
-    4: v
+    5: v
         cap: V
         alt:
         opt:
@@ -429,7 +437,7 @@
         cap_alt: 
         cap_opt: 
         cap_alt_opt: 
-    5: b
+    6: b
         cap: B
         alt:
         opt:
@@ -438,7 +446,7 @@
         cap_alt: 
         cap_opt: 
         cap_alt_opt: 
-    6: n
+    7: n
         cap: N
         alt: (Combining ~ Accent)
         opt:
@@ -447,7 +455,7 @@
         cap_alt: 
         cap_opt: 
         cap_alt_opt: 
-    7: m
+    8: m
         cap: M
         alt: (Combining u accent)
         opt:
@@ -456,7 +464,7 @@
         cap_alt: 
         cap_opt: 
         cap_alt_opt: 
-    8: ,
+    9: ,
         cap: <
         alt: (Combining , accent)
         opt:
@@ -465,7 +473,7 @@
         cap_alt: 
         cap_opt: 
         cap_alt_opt: 
-    9: .
+    10: .
         cap: >
         alt: (Combining · accent)
         opt:
@@ -474,7 +482,7 @@
         cap_alt: 
         cap_opt: 
         cap_alt_opt: 
-    10: /
+    11: /
         cap: ?
         alt: (Combining ^ accent)
         opt: ¿
@@ -483,7 +491,7 @@
         cap_alt: 
         cap_opt: 
         cap_alt_opt: 
-    11: \
+    12: \
         cap: |
         alt: (Combining ¯ accent)
         opt:
@@ -492,14 +500,15 @@
         cap_alt: 
         cap_opt: 
         cap_alt_opt: 
-    12: (UP)
+    13: (UP)
         cap: (SELECT_UP)
         alt: (TOGGLE_TILE_WINDOW_UP)
         opt: (SWAP_LINE_OR_NOTES_UP)
         sys: (LINE_END_PAGE_UP_OR_TRACK_UP)
         alt_opt: ↑ (Upwards Arrow)
         cap_alt: (MAXIMIZE_WINDOW)
-    13: (SHIFT)
+    14: (SHIFT)
+    15: (ADD)
 4:
     0: (CLIPBOARD_BUFFER)
         cap: (CLIPBOARD_PASTE)
@@ -545,8 +554,11 @@
         alt_opt: 
         cap_alt: 
         cap_opt: 
-        cap_alt_opt: 
-    5: (OPT)
+        cap_alt_opt:
+    5: (())
+    6: (())
+    7: (())
+    8: (OPT)
         cap:
         alt:
         opt:
@@ -555,7 +567,8 @@
         cap_alt: 
         cap_opt: 
         cap_alt_opt: 
-    6: (SCREENSHOT)
+    9: (())
+    10: (SCREENSHOT)
         cap: (SCREENCAST)
         alt: (NO_SYSTEM_GUI_SCREENSHOT)
         opt: (ONE_WINDOW_SCREENSHOT)
@@ -564,7 +577,7 @@
         cap_alt: (NO_SYSTEM_GUI_SCREENCAST)
         cap_opt: (ONE_WINDOW_SCREENCAST)
         cap_alt_opt: (SECRET_WEBCAM_PICTURE)
-    7: (EMOJI BY NAME)
+    11: (EMOJI BY NAME)
         cap: (EMOJI BY ASCII-CONVERSION)
         alt: (EMOJI TBD)
         opt: (EMOJI TBD)
@@ -573,27 +586,28 @@
         cap_alt: (EMOJI TBD)
         cap_opt: (EMOJI TBD)
         cap_alt_opt: (EMOJI TBD)
-    8: (LEFT)
+    12: (LEFT)
         cap: (SELECT_LEFT)
         alt: (TOGGLE_TILE_WINDOW_LEFT)
         opt: (SWAP_WORD_OR_MEASURE_LEFT)
         sys: (PREVIOUS_WORD_OR_MEASURE)
         alt_opt: ← (Left Arrow)
         cap_alt: (HOME(FILE BEGINNING))
-    9: (DOWN)
+    13: (DOWN)
         cap: (SELECT_DOWN)
         alt: (TOGGLE_TILE_WINDOW_DOWN)
         opt: (SWAP_LINE_OR_NOTES_DOWN)
         sys: (LINE_END_PAGE_DOWN_OR_TRACK_DOWN)
         alt_opt: ↓ (Downwards Arrow)
         cap_alt: (RESTORE_WINDOWS)
-    10: (RIGHT)
+    14: (RIGHT)
         cap: (SELECT_RIGHT)
         alt: (TOGGLE_TILE_WINDOW_RIGHT)
         opt: (SWAP_WORD_OR_MEASURE_RIGHT)
         sys: (NEXT_WORD_OR_MEASURE)
         alt_opt: → (Right Arrow)
         cap_alt: (END(FILE END))
+    15: (INPUT_MODE/CHANGE_LANGUAGE/KEYBOARD_LAYOUT)
 5:
     0: (LEFT_CLICK)
         cap: (MIDDLE_CLICK)
@@ -698,10 +712,10 @@
     9: EXT_NUMPAD_9
     10: EXT_NUMPAD_DECIMAL
     11: EXT_NUMPAD_ENTER
-    12: EXT_NUMPAD_ADD
-    13: EXT_NUMPAD_SUB
-    14: EXT_NUMPAD_MULTIPLY
-    15: EXT_NUMPAD_DIVIDE
+    12: 
+    13: 
+    14: 
+    15: 
 7:
     0: EXT_NUMLOCK
     1: EXT_SCROLL_LOCK
