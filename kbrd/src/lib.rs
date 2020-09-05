@@ -1,3 +1,5 @@
+pub mod keycodes;
+
 #[cfg(test)]
 mod tests {
     #[test]
