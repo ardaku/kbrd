@@ -10,11 +10,19 @@
 #       Row:3,
 #       Column:4,
 #   )
-# - ModState:4 (
-#       Cap(Shift):1,
-#       Alt(Alt):1,
-#       Opt(AltGr):1,
-#       Sys(Ctrl,Control,Super,Cmd,Win):1,
+# - InputState:8 (
+#     - ModState:4 (
+#           Cap(Shift):1,
+#           Alt(Alt):1,
+#           Opt(AltGr):1,
+#           Sys(Ctrl,Control,Super,Cmd,Win):1,
+#       )
+#     - MenuState:4 (
+#           InputModeMenu:1,
+#           ClipboardMenu:1,
+#           ComposeSequence:1,
+#           EmojiInput:1,
+#       )
 #   )
 
 0:
