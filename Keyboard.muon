@@ -1,0 +1,720 @@
+# Keyboard
+# - KeyEvent:8 (
+#       Pressed:1,
+#       Row:3,
+#       Column:4,
+#   )
+# - ModState:4 (
+#       Cap(Shift):1,
+#       Sys(Super,Cmd,Win,Alt):1,
+#       Alt(AltGr):1,
+#       Ctr(Ctrl,Control):1,
+#   )
+
+0:
+    0: (BACK, quit)
+        cap: ~ (Tilde)
+        sys: ` (Grave Accent)
+        alt: ¬ (Not sign)
+        ctr: (CLOSE_TAB)
+        sys_alt: ⮌ (Anti-clockwise Triangle-headed Right U-Shaped Arrow)
+        cap_sys: (SYSTEM_POWER)
+        cap_alt: (KEYBOARD_INPUT_MODE)
+        cap_sys_alt: ⏻ (Power Symbol)
+    1: 1
+        cap: ! (Excalamation Mark)
+        sys: ₱: Philippine peso
+        alt: ¡ (Inverted Exclamation Mark)
+        ctr: F1
+        sys_alt: (Currency: TBD)
+        cap_sys: ₡: (Currency: Costa Rican colón)
+        cap_alt: ₲: (Currency: Paraguayan guaraní)
+        cap_sys_alt: 
+    2: 2
+        cap: @
+        sys: ₪ (Currency: Israeli New Shekel)
+        alt:
+        ctr: F2
+        sys_alt: ₼ (Currency: Azerbaijani manat)
+        cap_sys: ₦ (Currency: Nigerian naira)
+        cap_alt: (Currency: TBD)
+        cap_sys_alt: 
+    3: 3
+        cap: #
+        sys: £ (Currency: Pound)
+        alt:
+        ctr: F3
+        sys_alt: ₸ (Currency: Tenge Sign)
+        cap_sys: ƒ (Currency: Aruban florin, Netherlands Antillean guilder)
+        cap_alt: (Currency: TBD)
+        cap_sys_alt: 
+    4: 4
+        cap: $ (Currency: US Dollar)
+        sys: ¢ (Currency: US Cent)
+        alt:
+        ctr: F4
+        sys_alt: ₥ (Currency: Generic Mill, 1/1000 of a cent)
+        cap_sys: ¤ (Currency: Generic, When Correct Symbol Unavailable)
+        cap_alt: (Currency: TBD)
+        cap_sys_alt: 
+    5: 5
+        cap: %
+        sys: € (Currency: Euro)
+        alt:
+        ctr: F5
+        sys_alt: (Currency: TBD)
+        cap_sys: ₫ (Currency: Vietnamese đồng)
+        cap_alt: (Currency: TBD)
+        cap_sys_alt: 
+    6: 6
+        cap: ^
+        sys: ₺ (Currency: Turkish Lira)
+        alt:
+        ctr: F6
+        sys_alt: (Currency: TBD)
+        cap_sys: ₭ (Currency: Lao kip)
+        cap_alt: (Currency: TBD)
+        cap_sys_alt: 
+    7: 7
+        cap: &
+        sys: ₩ (Currency: Korean Won)
+        alt:
+        ctr: F7
+        sys_alt: (Currency: TBD)
+        cap_sys: ฿ (Currency: Thai baht)
+        cap_alt: (Currency: TBD)
+        cap_sys_alt: 
+    8: 8
+        cap: *
+        sys: ₽ (Currency: Russian Ruble)
+        alt:
+        ctr: F8
+        sys_alt: ₾ (Currency: Georgian lari)
+        cap_sys: ₴ (Currency: Ukrainian hryvnia)
+        cap_alt: (Currency: TBD)
+        cap_sys_alt: 
+    9: 9
+        cap: (
+        sys: ₹ (Currency: Indian Rupee)
+        alt: ‘ (Open Quote)
+        ctr: (F9: )
+        sys_alt: (Currency: TBD)
+        cap_sys: ৳ (Currency: Bangladeshi Taka)
+        cap_alt: (Currency: TBD)
+        cap_sys_alt: 
+    10: 0
+        cap: )
+        sys: ¥ (Currency: Japanese Yen, Chinese Renminbi Yuan)
+        alt: ’ (Close Quote)
+        ctr: (F10: ZOOM_RESET)
+        sys_alt: (Currency: TBD)
+        cap_sys: ₮ (Currency: Mongolian tögrög)
+        cap_alt: (Currency: TBD)
+        cap_sys_alt: 
+    11: -
+        cap: _
+        sys: (SCREEN_ZOOM_OUT)
+        alt: ÷ (Division)
+        ctr: (WIDGET_ZOOM_OUT)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: ¯
+        cap_sys_alt: 
+    12: =
+        cap: +
+        sys: (SCREEN_ZOOM_IN)
+        alt: × (Multiplication)
+        ctr: (WIDGET_ZOOM_IN)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    13: (BACKSPACE)
+        cap: (DELETE)
+        sys:
+        alt:
+        ctr: (DELETE_LINE_OR_MEASURE)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+1:
+    0: (INDENT)
+        cap: (OUTDENT)
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    1: q
+        cap: Q
+        sys:
+        alt:
+        ctr: (TAB_LEFT)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    2: w
+        cap: W
+        sys:
+        alt:
+        ctr: (TAB_RIGHT)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    3: e
+        cap: E
+        sys:
+        alt:
+        ctr: (EMPHASIS: ITALIC_BOLD_OR_DYNAMIC)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    4: r
+        cap: R
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    5: t
+        cap: T
+        sys:
+        alt:
+        ctr: (NEW_TAB)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    6: y
+        cap: Y
+        sys:
+        alt: þ (Lowercase Thorn)
+        ctr: (REDO)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: Þ (Uppercase Thorn)
+        cap_sys_alt: 
+    7: u
+        cap: U
+        sys:
+        alt:
+        ctr: (UNDERLINE)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    8: i
+        cap: I
+        sys:
+        alt:
+        ctr: (ITALIC_PLAYING_STYLE)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    9: o
+        cap: O
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    10: p
+        cap: P
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    11: [
+        cap: {
+        sys: «
+        alt: “
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    12: ]
+        cap: }
+        sys: »
+        alt: ”
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    13: \
+        cap: |
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+2:
+    0: (CONTROL)
+        cap: (FIND_MOUSE/SYS)
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    1: a
+        cap: A
+        sys:
+        alt:
+        ctr: (SELECT_ALL)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    2: s
+        cap: S
+        sys:
+        alt:
+        ctr: (SHARE)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    3: d
+        cap: D
+        sys:
+        alt:
+        ctr: (DUPLICATE_LINE_OR_MEASURE)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    4: f
+        cap: F
+        sys: (FIND_AND_REPLACE)
+        alt: 
+        ctr: (FIND)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    5: g
+        cap: G
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    6: h
+        cap: H
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    7: j
+        cap: J
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    8: k
+        cap: K
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    9: l
+        cap: L
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    10: ;
+        cap: :
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    11: '
+        cap: "
+        sys: 
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    12: (NEXT_LINE_OR_MEASURE(ENTER))
+        cap: (PREV_LINE_OR_MEASURE)
+        sys: (COLUMN_BREAK)
+        alt: (Paragraph Sign)
+        ctr: (PAGE_OR_ROW_BREAK)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+3:
+    0: (SHIFT)
+        cap:
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    1: z
+        cap: Z
+        sys: (REDO)
+        alt: æ
+        ctr: (UNDO)
+        sys_alt: ž
+        cap_sys: (UNDO_REDO_HISTORY_BRANCH)
+        cap_alt: Æ
+        cap_sys_alt: Ž
+    2: x
+        cap: X
+        sys: (CLIPBOARD_SWAP)
+        alt: 
+        ctr: (CLIPBOARD_CUT)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    3: c
+        cap: C
+        sys: (CANCEL)
+        alt: 
+        ctr: (CLIPBOARD_COPY)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    4: v
+        cap: V
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    5: b
+        cap: B
+        sys:
+        alt:
+        ctr: (BOLD)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    6: n
+        cap: N
+        sys: (Combining ~ Accent)
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    7: m
+        cap: M
+        sys: (Combining u accent)
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    8: ,
+        cap: <
+        sys: (Combining , accent)
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    9: .
+        cap: >
+        sys: (Combining · accent)
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    10: /
+        cap: ?
+        sys: (Combining ^ accent)
+        alt: ¿
+        ctr: (FIND)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    11: (UP)
+        cap: (SELECT_UP)
+        sys: (TOGGLE_TILE_WINDOW_UP)
+        alt: (SWAP_LINE_OR_NOTES_UP)
+        ctr: (LINE_END_PAGE_UP_OR_TRACK_UP)
+        sys_alt: ↑ (Upwards Arrow)
+        cap_sys: (MAXIMIZE_WINDOW)
+    12: (CLIPBOARD_BUFFER)
+        cap: (CLIPBOARD_PASTE)
+        sys: (SETTINGS)
+        alt: (CLIPBOARD_PEEK_BUFFER)
+        ctr: (MENU)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+4:
+    0: (FIND)
+        cap: (FIND_AND_REPLACE)
+        sys: (SEARCH_SYSTEM)
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    1: (EMOJI)
+        cap:
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    2: (COMPOSE)
+        cap: (ALTERNATE_COMPOSE)
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    3: (SYS)
+        cap:
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    4: (SPACE)
+        cap: (SPACE)
+        sys: (BACKGROUND_MULTIMEDIA_PAUSE_PLAY)
+        alt: (NON-BREAKING_SPACE)
+        ctr: (BROWSE_AUTOCOMPLETE)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    5: (ALT)
+        cap:
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    6: (QUIETER)
+        cap: (BACKGROUND_MULTIMEDIA_PREVIOUS)
+        sys: (MUTE)
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    7: (LOUDER)
+        cap: (BACKGROUND_MULTIMEDIA_NEXT)
+        sys: (BACKGROUND_MULTIMEDIA_TOGGLE_WINDOW_MAXIMIZED)
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    8: (LEFT)
+        cap: (SELECT_LEFT)
+        sys: (TOGGLE_TILE_WINDOW_LEFT)
+        alt: (SWAP_WORD_OR_MEASURE_LEFT)
+        ctr: (PREVIOUS_WORD_OR_MEASURE)
+        sys_alt: ← (Left Arrow)
+        cap_sys: (HOME(FILE BEGINNING))
+    9: (DOWN)
+        cap: (SELECT_DOWN)
+        sys: (TOGGLE_TILE_WINDOW_DOWN)
+        alt: (SWAP_LINE_OR_NOTES_DOWN)
+        ctr: (LINE_END_PAGE_DOWN_OR_TRACK_DOWN)
+        sys_alt: ↓ (Downwards Arrow)
+        cap_sys: (RESTORE_WINDOWS)
+    10: (RIGHT)
+        cap: (SELECT_RIGHT)
+        sys: (TOGGLE_TILE_WINDOW_RIGHT)
+        alt: (SWAP_WORD_OR_MEASURE_RIGHT)
+        ctr: (NEXT_WORD_OR_MEASURE)
+        sys_alt: → (Right Arrow)
+        cap_sys: (END(FILE END))
+5:
+    0: (LEFT_CLICK)
+        cap: (MIDDLE_CLICK)
+        sys: (DPI_CLICK)
+        ctr: (RIGHT_CLICK)
+        cap_sys: (SIDE_CLICK)
+    1: (MIDDLE_CLICK)
+        cap: (EXTRA_CLICK)
+        sys: (FORWARD_CLICK)
+        ctr: (BACKWARD_CLICK)
+    2: (RIGHT_CLICK)
+        cap: (EXTRA_CLICK)
+        sys: (FORWARD_CLICK)
+        ctr: (BACKWARD_CLICK)
+    3: (EXT_SIDE_CLICK)
+    4: (EXT_DPI_CLICK)
+    5: (EXT_EXTRA_CLICK)
+    6: (EXT_FORWARD_CLICK)
+    7: (EXT_BACK_CLICK)
+    8: (SCROLL_UP)
+        cap: (SCROLL_LEFT)
+        sys: (SCREEN_ZOOM_IN)
+        alt:
+        ctr: (WIDGET_ZOOM_IN)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    9: (SCROLL_DOWN)
+        cap: (SCROLL_RIGHT)
+        sys: (SCREEN_ZOOM_OUT)
+        alt:
+        ctr: (WIDGET_ZOOM_OUT)
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    10: (SCROLL_LEFT)
+        cap: (SCROLL_UP)
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    11: (SCROLL_RIGHT)
+        cap: (SCROLL_DOWN)
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    12: (SCROLL_TILT_UP)
+        cap:
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    13: (SCROLL_TILT_DOWN)
+        cap:
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    14: (SCROLL_TILT_LEFT)
+        cap:
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+    15: (SCROLL_TILT_RIGHT)
+        cap:
+        sys:
+        alt:
+        ctr: 
+        sys_alt: 
+        cap_sys: 
+        cap_alt: 
+        cap_sys_alt: 
+6:
+    0: EXT_NUMPAD_0
+    1: EXT_NUMPAD_1
+    2: EXT_NUMPAD_2
+    3: EXT_NUMPAD_3
+    4: EXT_NUMPAD_4
+    5: EXT_NUMPAD_5
+    6: EXT_NUMPAD_6
+    7: EXT_NUMPAD_7
+    8: EXT_NUMPAD_8
+    9: EXT_NUMPAD_9
+    10: EXT_NUMPAD_DECIMAL
+    11: EXT_NUMPAD_ENTER
+    12: EXT_NUMPAD_ADD
+    13: EXT_NUMPAD_SUB
+    14: EXT_NUMPAD_MULTIPLY
+    15: EXT_NUMPAD_DIVIDE
+7:
+    0: EXT_NUMLOCK
+    1: EXT_SCROLL_LOCK
+    2: EXT_PRINT_SCREEN
+    3: EXT_PAUSE
+    4: EXT_CALCULATOR
+    5: EXT_SETTINGS
+    6: EXT_EXTERNAL_MONITOR
+    7: EXT_AIRPLANE_MODE
+    8:
+    9:
+    10:
+    11: EXT_F11
+    12: EXT_F12
+    13: EXT_F13
+    14: EXT_F14
+    15: EXT_F15
