@@ -13,15 +13,15 @@
 # - InputState:8 (
 #     - ModState:4 (
 #           Cap(Shift):1,
-#           Alt(Alt):1,
-#           Opt(AltGr):1,
-#           Sys(Ctrl,Control,Super,Cmd,Win):1,
+#           Alt(Ctrl+Shift,CapsLock):1,
+#           Opt(AltGr,RightAlt):1,
+#           Sys(LeftCtrl,LeftSuper,Cmd,Win):1,
 #       )
 #     - MenuState:4 (
-#           InputModeMenu:1,
-#           ClipboardMenu:1,
-#           ComposeSequence:1,
-#           EmojiInput:1,
+#           InputModeMenu(RightSuper,Insert):1,
+#           ClipboardMenu(LeftAlt):1,
+#           ComposeSequence(Shift+CapsLock):1,
+#           EmojiInput(RightCtrl):1,
 #       )
 #   )
 
@@ -101,7 +101,7 @@
     8: 8
         cap: *
         alt: ₽ (Currency: Russian Ruble)
-        opt:
+        opt: § (Section Sign)
         sys: F8
         alt_opt: ₾ (Currency: Georgian lari)
         cap_alt: ₴ (Currency: Ukrainian hryvnia)
@@ -120,7 +120,7 @@
         cap: )
         alt: ¥ (Currency: Japanese Yen, Chinese Renminbi Yuan)
         opt: ’ (Close Quote)
-        sys: (F10: ZOOM_RESET)
+        sys: (F10: WIDGET_ZOOM_RESET)
         alt_opt: (Currency: TBD)
         cap_alt: ₮ (Currency: Mongolian tögrög)
         cap_opt: (Currency: TBD)
@@ -129,7 +129,7 @@
         cap: _
         alt: (SCREEN_ZOOM_OUT)
         opt: ÷ (Division)
-        sys: (WIDGET_ZOOM_OUT)
+        sys: (F11: WIDGET_ZOOM_OUT)
         alt_opt: 
         cap_alt: 
         cap_opt: ¯
@@ -138,7 +138,7 @@
         cap: +
         alt: (SCREEN_ZOOM_IN)
         opt: × (Multiplication)
-        sys: (WIDGET_ZOOM_IN)
+        sys: (F12: WIDGET_ZOOM_IN)
         alt_opt: 
         cap_alt: 
         cap_opt: 
@@ -159,7 +159,8 @@
         cap: (OUTDENT)
         alt:
         opt:
-        sys: 
+        sys: (WINDOW_FOCUS_NEXT)
+        sys_cap: (WINDOW_FOCUS_PREVIOUS)
         alt_opt: 
         cap_alt: 
         cap_opt: 
@@ -202,7 +203,7 @@
         cap_alt_opt: 
     5: t
         cap: T
-        alt:
+        alt: (OPEN_RECENTLY_CLOSED_TAB)
         opt:
         sys: (NEW_TAB)
         alt_opt: 
@@ -211,7 +212,7 @@
         cap_alt_opt: 
     6: y
         cap: Y
-        alt:
+        alt: (UNDO_REDO_HISTORY_BRANCH)
         opt: þ (Lowercase Thorn)
         sys: (REDO)
         alt_opt: 
@@ -240,7 +241,7 @@
         cap: O
         alt:
         opt:
-        sys: 
+        sys: (OPEN_FILE_CHOOSER)
         alt_opt: 
         cap_alt: 
         cap_opt: 
@@ -284,15 +285,8 @@
     14: (())
     15: (MULTIPLY)
 2:
-    0: (CONTROL)
-        cap: (FIND_MOUSE/SYS)
-        alt:
-        opt:
-        sys: 
-        alt_opt: 
-        cap_alt: 
-        cap_opt: 
-        cap_alt_opt: 
+    0: (ALT)
+        opt: (MENU)
     1: a
         cap: A
         alt:
@@ -436,7 +430,7 @@
     4: c
         cap: C
         alt: (CANCEL)
-        opt: 
+        opt: ©
         sys: (CLIPBOARD_COPY)
         alt_opt: 
         cap_alt: 
@@ -444,9 +438,9 @@
         cap_alt_opt: 
     5: v
         cap: V
-        alt:
+        alt: (CLIPBOARD_PASTE_UNFORMATTED)
         opt:
-        sys: 
+        sys: (CLIPBOARD_PASTE)
         alt_opt: 
         cap_alt: 
         cap_opt: 
@@ -472,7 +466,7 @@
     8: m
         cap: M
         alt: (Combining u accent)
-        opt:
+        opt: µ
         sys: 
         alt_opt: 
         cap_alt: 
@@ -508,7 +502,7 @@
     12: \
         cap: |
         alt: (Combining ¯ accent)
-        opt:
+        opt: ¦
         sys:
         alt_opt: 
         cap_alt: 
@@ -536,30 +530,19 @@
     1: (QUIETER)
         cap: (BACKGROUND_MULTIMEDIA_PREVIOUS)
         alt: (MUTE)
-        opt:
-        sys: 
-        alt_opt: 
-        cap_alt: 
-        cap_opt: 
-        cap_alt_opt: 
+        opt: (BACKGROUND_MULTIMEDIA_REWIND)
+        sys: (SCREEN_DIM)
+        cap_alt: (PAUSE)
+        cap_opt: (SCREEN_OFF)
     2: (LOUDER)
         cap: (BACKGROUND_MULTIMEDIA_NEXT)
         alt: (BACKGROUND_MULTIMEDIA_TOGGLE_WINDOW_MAXIMIZED)
-        opt:
-        sys: 
-        alt_opt: 
-        cap_alt: 
-        cap_opt: 
-        cap_alt_opt: 
-    3: (ALT)
-        cap:
-        alt:
-        opt:
-        sys: 
-        alt_opt: 
-        cap_alt: 
-        cap_opt: 
-        cap_alt_opt: 
+        opt: (BACKGROUND_MULTIMEDIA_FAST_FORWARD)
+        sys: (SCREEN_BRIGHTEN)
+        cap_alt: (PLAY)
+        cap_opt: (SCREEN_ON)
+    3: (SYS: SYSTEM_FOCUS)
+        cap: (SYSTEM_MENU)
     4: (SPACE)
         cap: (SPACE)
         alt: (BACKGROUND_MULTIMEDIA_PAUSE_PLAY)
@@ -734,7 +717,7 @@
     0: EXT_NUMLOCK
     1: EXT_SCROLL_LOCK
     2: EXT_PRINT_SCREEN
-    3: EXT_PAUSE
+    3: EXT_PAUSE_PLAY
     4: EXT_CALCULATOR
     5: EXT_SETTINGS
     6: EXT_EXTERNAL_MONITOR
