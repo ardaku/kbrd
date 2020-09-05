@@ -1,4 +1,10 @@
-# Keyboard
+# Keyboard (15+15+14+15+12=71 Keys)
+#  - 1x 4
+#  - 1x 2.5
+#  - 2x 2
+#  - 5x 1.5
+#  - 62x 1
+#
 # - KeyEvent:8 (
 #       Pressed:1,
 #       Row:3,
