@@ -7,7 +7,7 @@ pub fn press<K: Into<u8>, F: FnMut(&Mods, u8)>(mods: &mut Mods, keycode: K, mut 
     if let Some(events) = keycodes::MAPPINGS[keycode.into() as usize] {
         for (key, modifiers) in events.iter().cloned() {
             mods.set(modifiers);
-            process(mods, key.into());
+            process(mods, key as u8);
         }
     }
 }
@@ -16,7 +16,7 @@ pub fn release<K: Into<u8>, F: FnMut(&Mods, u8)>(mods: &mut Mods, keycode: K, mu
     if let Some(events) = keycodes::MAPPINGS[keycode.into() as usize] {
         for (key, modifiers) in events.iter().cloned() {
             mods.clear(modifiers);
-            process(mods, key.into());
+            process(mods, key as u8);
         }
     }
 }

@@ -258,7 +258,7 @@ pub enum Keycode {
     ToggleTouchpad = 255,
 }
 
-impl Into<u8> for Key {
+impl Into<u8> for Keycode {
     fn into(self) -> u8 {
         self as u8
     }
