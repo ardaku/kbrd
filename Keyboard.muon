@@ -24,6 +24,10 @@
 #           EmojiInput(RightCtrl):1,
 #       )
 #   )
+#
+# ⌥ Additional Graph Option (opt)
+# ⌘ System Control (ctrl)
+# ⎇ Alternate Function (alt)
 
 0:
     0: (BACK, quit)

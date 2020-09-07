@@ -264,7 +264,7 @@ impl Into<u8> for Keycode {
     }
 }
 
-/// Rynvei Keyboard Keycode
+/// Key on a Keyboard
 #[repr(u8)]
 #[derive(Copy, Clone, Debug)]
 pub enum Key {
@@ -285,7 +285,7 @@ pub enum Key {
     Backspace = 0x0D,
     Divide = 0x0F,
     // Row 2
-    Indent = 0x10,
+    Tab = 0x10,
     Q = 0x11,
     W = 0x12,
     E = 0x13,
@@ -301,7 +301,7 @@ pub enum Key {
     Compose = 0x1D,
     Multiply = 0x1F,
     // Row 3
-    Command = 0x20,
+    Ctrl = 0x20,
     A = 0x21,
     S = 0x22,
     D = 0x23,
@@ -335,7 +335,7 @@ pub enum Key {
     Clipboard = 0x40,
     Quieter = 0x41,
     Louder = 0x42,
-    System = 0x43,
+    Alt = 0x43,
     Space = 0x44,
     Opt = 0x48,
     Screenshot = 0x4A,
@@ -404,12 +404,12 @@ pub struct Mods(u8);
 impl Mods {
     /// Check if modifiers held.
     #[inline(always)]
-    pub fn held(&self, shift: bool, command: bool, system: bool, option: bool) -> bool {
+    pub fn held(&self, shift: bool, control: bool, alt: bool, option: bool) -> bool {
         let state = (shift as u8 * CAP)
-            | (command as u8 * CMD)
-            | (system as u8 * SYS)
-            | (option as u8 * ALT);
-        (self.0 & (CAP | CMD | SYS | ALT)) != state
+            | (control as u8 * CTR)
+            | (alt as u8 * ALT)
+            | (option as u8 * OPT);
+        (self.0 & (CAP | CTR | ALT | OPT)) != state
     }
 
     /// Clear modifiers
@@ -424,26 +424,26 @@ impl Mods {
 }
 
 /// Shift Modifier Key
-const CAP: u8 = 0b1000_0000;
+pub(super) const CAP: u8 = 0b1000_0000;
 /// Command Modifier Key
-const CMD: u8 = 0b0100_0000;
+pub(super) const ALT: u8 = 0b1100_0000;
 /// Control Modifier Key
-const SYS: u8 = 0b0010_0000;
+pub(super) const CTR: u8 = 0b0100_0000;
 /// Alternate Grapheme Modifier Key
-const ALT: u8 = 0b0001_0000;
+pub(super) const OPT: u8 = 0b0010_0000;
 
 /// Table Mappings JavaScript Keycodes To Rynvei Keycodes
 pub const MAPPINGS: &[Option<&[(Key, Mods)]>; 255] = &[
     None,                                                  // Unknown0 = 0,
     None,                                                  // Unknown1 = 1,
     None,                                                  // Unknown2 = 2,
-    Some(&[(Key::C, Mods(CMD))]),                          // Break = 3, "Cancel"
+    Some(&[(Key::C, Mods(ALT))]),                          // Break = 3, "Cancel"
     None,                                                  // Unknown4 = 4,
     None,                                                  // Unknown5 = 5,
     None,                                                  // Unknown6 = 6,
     None,                                                  // Unknown7 = 7,
     Some(&[(Key::Backspace, Mods(0))]),                    // Backspace = 8,
-    Some(&[(Key::Indent, Mods(0))]),                       // Tab = 9,
+    Some(&[(Key::Tab, Mods(0))]),                          // Tab = 9,
     None,                                                  // Unknown10 = 10,
     None,                                                  // Unknown11 = 11,
     Some(&[(Key::Clear, Mods(0))]),                        // Clear = 12,
@@ -451,10 +451,10 @@ pub const MAPPINGS: &[Option<&[(Key, Mods)]>; 255] = &[
     None,                                                  // Unknown14 = 14,
     None,                                                  // Unknown15 = 15,
     Some(&[(Key::Shift, Mods(0))]),                        // Shift = 16,
-    Some(&[(Key::System, Mods(0))]),                       // Ctrl = 17,
-    Some(&[(Key::Clipboard, Mods(0))]),                    // Alt = 18,
+    Some(&[(Key::Ctrl, Mods(0))]),                         // Ctrl = 17,
+    Some(&[(Key::Alt, Mods(0))]),                          // Alt = 18,
     Some(&[(Key::Pause, Mods(0))]),                        // PauseBreak = 19,
-    Some(&[(Key::Command, Mods(0))]),                      // CapsLock = 20,
+    Some(&[(Key::Clipboard, Mods(0))]),                    // CapsLock = 20,
     Some(&[(Key::Input, Mods(0)), (Key::One, Mods(0))]),   // Hangul = 21,
     None,                                                  // Unknown22 = 22,
     None,                                                  // Unknown23 = 23,
@@ -466,10 +466,10 @@ pub const MAPPINGS: &[Option<&[(Key, Mods)]>; 255] = &[
     None,                                                  // Unknown30 = 30,
     None,                                                  // Unknown31 = 31,
     Some(&[(Key::Space, Mods(0))]),                        // Space = 32,
-    Some(&[(Key::Up, Mods(SYS))]),                         // PageUp = 33,
-    Some(&[(Key::Down, Mods(SYS))]),                       // PageDown = 34,
-    Some(&[(Key::Left, Mods(SYS | CAP))]),                 // End = 35,
-    Some(&[(Key::Right, Mods(SYS | CAP))]),                // Home = 36,
+    Some(&[(Key::Up, Mods(CTR))]),                         // PageUp = 33,
+    Some(&[(Key::Down, Mods(CTR))]),                       // PageDown = 34,
+    Some(&[(Key::Left, Mods(CTR | CAP))]),                 // End = 35,
+    Some(&[(Key::Right, Mods(CTR | CAP))]),                // Home = 36,
     Some(&[(Key::Left, Mods(0))]),                         // Left = 37,
     Some(&[(Key::Up, Mods(0))]),                           // Up = 38,
     Some(&[(Key::Right, Mods(0))]),                        // Right = 39,
@@ -480,7 +480,7 @@ pub const MAPPINGS: &[Option<&[(Key, Mods)]>; 255] = &[
     Some(&[(Key::Screenshot, Mods(0))]),                   // PrintScreen = 44,
     Some(&[(Key::Input, Mods(0))]),                        // Insert = 45,
     Some(&[(Key::Backspace, Mods(CAP))]),                  // Delete = 46,
-    Some(&[(Key::H, Mods(SYS))]),                          // Help = 47,
+    Some(&[(Key::H, Mods(CTR))]),                          // Help = 47,
     Some(&[(Key::Zero, Mods(0))]),                         // Zero = 48,
     Some(&[(Key::One, Mods(0))]),                          // One = 49,
     Some(&[(Key::Two, Mods(0))]),                          // Two = 50,
@@ -496,7 +496,7 @@ pub const MAPPINGS: &[Option<&[(Key, Mods)]>; 255] = &[
     Some(&[(Key::Comma, Mods(CAP))]),                      // Less = 60,
     Some(&[(Key::Equal, Mods(0))]),                        // EqualFirefox = 61,
     None,                                                  // Unknown62 = 62,
-    Some(&[(Key::S, Mods(ALT))]),                          // SS = 63,
+    Some(&[(Key::S, Mods(OPT))]),                          // SS = 63,
     Some(&[(Key::Two, Mods(CAP))]),                        // AtFirefox = 64,
     Some(&[(Key::A, Mods(0))]),                            // A = 65,
     Some(&[(Key::B, Mods(0))]),                            // B = 66,
@@ -524,11 +524,11 @@ pub const MAPPINGS: &[Option<&[(Key, Mods)]>; 255] = &[
     Some(&[(Key::X, Mods(0))]),                            // X = 88,
     Some(&[(Key::Y, Mods(0))]),                            // Y = 89,
     Some(&[(Key::Z, Mods(0))]),                            // Z = 90,
-    Some(&[(Key::System, Mods(0))]),                       // LeftWinCmdSearchKey = 91,
+    Some(&[(Key::Ctrl, Mods(0))]),                         // LeftWinCmdSearchKey = 91,
     Some(&[(Key::Input, Mods(0))]),                        // RightWinKey = 92,
     Some(&[(Key::Menu, Mods(0))]),                         // MenuRightCmd = 93,
     None,                                                  // Unknown94 = 94,
-    Some(&[(Key::Semicolon, Mods(SYS))]),                  // Sleep = 95,
+    Some(&[(Key::Backspace, Mods(ALT))]),                  // Sleep = 95,
     Some(&[(Key::NumpadZero, Mods(0))]),                   // Numpad0 = 96,
     Some(&[(Key::NumpadOne, Mods(0))]),                    // Numpad1 = 97,
     Some(&[(Key::NumpadTwo, Mods(0))]),                    // Numpad2 = 98,
@@ -545,18 +545,18 @@ pub const MAPPINGS: &[Option<&[(Key, Mods)]>; 255] = &[
     Some(&[(Key::Subtract, Mods(0))]),                     // Subtract = 109,
     Some(&[(Key::NumpadDecimal, Mods(0))]),                // Decimal = 110,
     Some(&[(Key::Divide, Mods(0))]),                       // Divide = 111,
-    Some(&[(Key::One, Mods(SYS))]),                        // F1 = 112,
-    Some(&[(Key::Two, Mods(SYS))]),                        // F2 = 113,
-    Some(&[(Key::Three, Mods(SYS))]),                      // F3 = 114,
-    Some(&[(Key::Four, Mods(SYS))]),                       // F4 = 115,
-    Some(&[(Key::Five, Mods(SYS))]),                       // F5 = 116,
-    Some(&[(Key::Six, Mods(SYS))]),                        // F6 = 117,
-    Some(&[(Key::Seven, Mods(SYS))]),                      // F7 = 118,
-    Some(&[(Key::Eight, Mods(SYS))]),                      // F8 = 119,
-    Some(&[(Key::Nine, Mods(SYS))]),                       // F9 = 120,
-    Some(&[(Key::Zero, Mods(SYS))]),                       // F10 = 121,
-    Some(&[(Key::Minus, Mods(SYS))]),                      // F11 = 122,
-    Some(&[(Key::Equal, Mods(SYS))]),                      // F12 = 123,
+    Some(&[(Key::One, Mods(ALT))]),                        // F1 = 112,
+    Some(&[(Key::Two, Mods(ALT))]),                        // F2 = 113,
+    Some(&[(Key::Three, Mods(ALT))]),                      // F3 = 114,
+    Some(&[(Key::Four, Mods(ALT))]),                       // F4 = 115,
+    Some(&[(Key::Five, Mods(ALT))]),                       // F5 = 116,
+    Some(&[(Key::Six, Mods(ALT))]),                        // F6 = 117,
+    Some(&[(Key::Seven, Mods(ALT))]),                      // F7 = 118,
+    Some(&[(Key::Eight, Mods(ALT))]),                      // F8 = 119,
+    Some(&[(Key::Nine, Mods(ALT))]),                       // F9 = 120,
+    Some(&[(Key::Zero, Mods(ALT))]),                       // F10 = 121,
+    Some(&[(Key::Minus, Mods(ALT))]),                      // F11 = 122,
+    Some(&[(Key::Equal, Mods(ALT))]),                      // F12 = 123,
     Some(&[(Key::F13, Mods(0))]),                          // F13 = 124,
     Some(&[(Key::F14, Mods(0))]),                          // F14 = 125,
     Some(&[(Key::F15, Mods(0))]),                          // F15 = 126,
@@ -598,14 +598,14 @@ pub const MAPPINGS: &[Option<&[(Key, Mods)]>; 255] = &[
     None,                                                  // Unknown162 = 162,
     Some(&[(Key::Three, Mods(CAP))]),                      // Number = 163,
     Some(&[(Key::Four, Mods(CAP))]),                       // Dollar = 164,
-    Some(&[(Key::F13, Mods(SYS))]),                        // GraveU = 165,
-    Some(&[(Key::Left, Mods(SYS))]),                       // PageBackward = 166,
-    Some(&[(Key::Right, Mods(SYS))]),                      // PageForward = 167,
-    Some(&[(Key::R, Mods(SYS))]),                          // Refresh = 168,
+    Some(&[(Key::F13, Mods(CTR))]),                        // GraveU = 165,
+    Some(&[(Key::Left, Mods(CTR))]),                       // PageBackward = 166,
+    Some(&[(Key::Right, Mods(CTR))]),                      // PageForward = 167,
+    Some(&[(Key::R, Mods(CTR))]),                          // Refresh = 168,
     Some(&[(Key::Zero, Mods(CAP))]),                       // ClosingParenAzerty = 169,
     Some(&[(Key::Eight, Mods(CAP))]),                      // Asterisk = 170,
     Some(&[(Key::Back, Mods(CAP))]),                       // Tilde = 171,
-    Some(&[(Key::Right, Mods(SYS | CAP))]),                // HomeAlternate = 172,
+    Some(&[(Key::Right, Mods(CTR | CAP))]),                // HomeAlternate = 172,
     Some(&[(Key::Subtract, Mods(0))]),                     // SubtractFirefox = 173,
     Some(&[(Key::Quieter, Mods(0))]),                      // DecreaseVolume = 174,
     Some(&[(Key::Louder, Mods(0))]),                       // IncreaseVolume = 175,
@@ -614,7 +614,7 @@ pub const MAPPINGS: &[Option<&[(Key, Mods)]>; 255] = &[
     Some(&[(Key::Pause, Mods(CAP))]),                      // Stop = 178,
     Some(&[(Key::Pause, Mods(0))]),                        // PlayPause = 179,
     Some(&[(Key::Clear, Mods(0))]),                        // Email = 180,
-    Some(&[(Key::Quieter, Mods(SYS))]),                    // MuteUnmute = 181,
+    Some(&[(Key::Quieter, Mods(ALT))]),                    // MuteUnmute = 181,
     Some(&[(Key::Quieter, Mods(0))]),                      // DecreaseVolumeFirefox = 182,
     Some(&[(Key::Louder, Mods(CAP))]),                     // IncreaseVolumeFirefox = 183,
     None,                                                  // Unknown184 = 184,
@@ -625,7 +625,7 @@ pub const MAPPINGS: &[Option<&[(Key, Mods)]>; 255] = &[
     Some(&[(Key::Minus, Mods(0))]),                        // Dash = 189,
     Some(&[(Key::Period, Mods(0))]),                       // Period = 190,
     Some(&[(Key::Slash, Mods(0))]),                        // ForwardSlash = 191,
-    Some(&[(Key::Back, Mods(CMD))]),                       // GraveAccent = 192,
+    Some(&[(Key::Back, Mods(ALT))]),                       // GraveAccent = 192,
     Some(&[(Key::Slash, Mods(CAP))]),                      // Question = 193,
     Some(&[(Key::NumpadDecimal, Mods(0))]),                // DecimalChrome = 194,
     None,                                                  // Unknown195 = 195,
@@ -656,15 +656,15 @@ pub const MAPPINGS: &[Option<&[(Key, Mods)]>; 255] = &[
     Some(&[(Key::Backslash, Mods(0))]),                    // Backslash = 220,
     Some(&[(Key::RightBracket, Mods(0))]),                 // CloseBracket = 221,
     Some(&[(Key::Quote, Mods(0))]),                        // SingleQuote = 222,
-    Some(&[(Key::Back, Mods(CMD))]),                       // Backtick = 223,
-    Some(&[(Key::System, Mods(0))]),                       // CmdFirefox = 224,
+    Some(&[(Key::Back, Mods(ALT))]),                       // Backtick = 223,
+    Some(&[(Key::Ctrl, Mods(0))]),                         // CmdFirefox = 224,
     Some(&[(Key::Opt, Mods(0))]),                          // AltGr = 225,
     Some(&[(Key::Backslash, Mods(0))]),                    // BackslashUK = 226,
     None,                                                  // Unknown227 = 227,
     None,                                                  // Unknown228 = 228,
     None,                                                  // Unknown229 = 229,
     Some(&[(Key::Compose, Mods(0))]),                      // ComposeKeyGnome = 230,
-    Some(&[(Key::C, Mods(ALT))]),                          // CWithTail = 231,
+    Some(&[(Key::C, Mods(OPT))]),                          // CWithTail = 231,
     None,                                                  // Unknown232 = 232,
     Some(&[(Key::Forward, Mods(0))]),                      // Xf86Forward = 233,
     Some(&[(Key::Backward, Mods(0))]),                     // Xf86Backward = 234,
@@ -688,5 +688,5 @@ pub const MAPPINGS: &[Option<&[(Key, Mods)]>; 255] = &[
     None,                                                  // Unknown252 = 252,
     None,                                                  // Unknown253 = 253,
     None,                                                  // Unknown254 = 254,
-    Some(&[(Key::Input, Mods(SYS))]),                      // ToggleTouchpad = 255,
+    Some(&[(Key::Input, Mods(ALT))]),                      // ToggleTouchpad = 255,
 ];
