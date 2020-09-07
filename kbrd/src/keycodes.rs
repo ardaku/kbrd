@@ -399,7 +399,7 @@ pub enum Key {
 
 /// Modifier State
 #[derive(Copy, Clone, Debug)]
-pub struct Mods(u8);
+pub struct Mods(pub(super) u8);
 
 impl Mods {
     /// Check if modifiers held.
