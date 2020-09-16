@@ -1,9 +1,9 @@
-# Keyboard (15+15+14+15+12=71 Keys)
-#  - 1x 4
-#  - 1x 2.5
-#  - 2x 2
-#  - 5x 1.5
-#  - 62x 1
+# Keyboard (16+14+14+15+12=71 Keys)
+#  - 1x 3
+#  - 2x 2.5
+#  - 1x 2
+#  - 6x 1.5
+#  - 61x 1
 #
 # - KeyEvent:8 (
 #       Pressed:1,
@@ -26,29 +26,50 @@
 #   )
 #
 # ⌥ Additional Graph Option (opt)
-# ⌘ System Control (ctrl)
+# ⌘ System Control (ctr)
 # ⎇ Alternate Function (alt)
+# Left Thumb (ltb)
+# Right Thumb (rtb)
+# Shift (cap)
 
 0:
-    0: (BACK, quit)
-        cap: ~ (Tilde)
-        alt: ` (Grave Accent)
-        opt: ¬ (Not sign)
-        sys: (CLOSE_TAB)
-        alt_opt: ⮌ (Anti-clockwise Triangle-headed Right U-Shaped Arrow)
-        cap_alt: (SYSTEM_POWER)
-        cap_opt: (KEYBOARD_INPUT_MODE)
-        cap_alt_opt: ⏻ (Power Symbol)
+    0: [BACK]
+        cap: ~ {Tilde}
+        ltb: ¬ {Not sign}
+        rtb: ⮌ {Anti-clockwise Triangle-headed Right U-Shaped Arrow}
+        ltb_rtb: ⏻ {Power Symbol}
+        ctr: 
+        alt: 
+        opt: [SYSTEM_POWER]
+        cap_opt: [SYSTEM_SUSPEND]
+        cap_ltb: 
+        cap_rtb: 
+        cap_ltb_rtb: 
     1: 1
-        cap: ! (Excalamation Mark)
-        alt: ₱: Philippine peso
-        opt: ¡ (Inverted Exclamation Mark)
-        sys: F1
-        alt_opt: (Currency: TBD)
-        cap_alt: ₡: (Currency: Costa Rican colón)
-        cap_opt: ₲: (Currency: Paraguayan guaraní)
-        cap_alt_opt: 
+        cap: ! {Excalamation Mark}
+        ltb: ¡ {Inverted Exclamation Mark}
+        rtb: ₱ {Philippine peso}
+        ltb_rtb: 
+        ctr: 
+        alt: 
+        opt: [F1]
+        cap_opt: ₲ {Currency: Paraguayan guaraní}
+        cap_ltb: ⸘ {Inverted Interrobang}
+        cap_rtb: ₡ {Currency: Costa Rican colón}
+        cap_ltb_rtb: {RESERVED: Currency}
     2: 2
+        cap: 
+        ltb: 
+        rtb: 
+        ltb_rtb: 
+        ctr: 
+        alt: 
+        opt: 
+        cap_opt: 
+        cap_ltb: 
+        cap_rtb: 
+        cap_ltb_rtb: 
+
         cap: @
         alt: ₪ (Currency: Israeli New Shekel)
         opt:
@@ -58,6 +79,18 @@
         cap_opt: (Currency: TBD)
         cap_alt_opt: 
     3: 3
+        cap: 
+        ltb: 
+        rtb: 
+        ltb_rtb: 
+        ctr: 
+        alt: 
+        opt: 
+        cap_opt: 
+        cap_ltb: 
+        cap_rtb: 
+        cap_ltb_rtb: 
+
         cap: #
         alt: £ (Currency: Pound)
         opt:
