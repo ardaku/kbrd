@@ -1,2 +1,2 @@
-# kbrd
-Keyboard input
+# Kbrd
+Keyboard input library
