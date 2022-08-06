@@ -1,9 +1,21 @@
 [package]
 name = "kbrd"
 version = "0.1.0"
+license = "Apache-2.0 OR BSL-1.0 OR MIT"
+description = "Send and receive asynchronous keyboard events"
+repository = "https://github.com/ardaku/kbrd"
+documentation = "https://docs.rs/kbrd"
+homepage = "https://github.com/ardaku/kbrd/blob/stable/CHANGELOG.md"
+include = ["README.md", "src/*"]
+categories = [
+    "asynchronous",
+    "concurrency",
+    "hardware-support",
+]
+keywords = ["keyboard", "types", "key", "input", "pasts"]
+readme = "README.md"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+rust-version = "1.60"
 
 [dependencies]
 pasts = "0.12"
