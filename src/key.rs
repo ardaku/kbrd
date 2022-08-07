@@ -247,7 +247,7 @@ pub enum Key {
     /// ```
     Erase = 56,
     /// ```text
-    /// Space Compose
+    /// Space Emoji
     /// ```
     Space = 57,
     /// ```text
@@ -513,9 +513,9 @@ pub enum Key {
     /// ```
     Remove = 120,
     /// ```text
-    /// Emoji ShiftEmoji
+    /// Compose ShiftCompose
     /// ```
-    Emoji = 121,
+    Compose = 121,
     /// ```text
     /// Insert ShiftInsert
     /// ```
